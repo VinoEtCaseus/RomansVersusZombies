@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Art/classical_temple_tiles.png" type="Texture" id=1]
+[ext_resource path="res://Unit.cs" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 19.4411
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 272, 408, 16, 24 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 256, 408, 16, 24 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "Switch",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=5]
+resource_name = "Attack"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 16.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Walk"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -4 ), Vector2( 0, -12 ), Vector2( 0.488724, -5.89095 ) ]
+}
+
+[node name="Unit" type="KinematicBody2D" groups=[
+"Units",
+]]
+position = Vector2( -3.30356, 0 )
+script = ExtResource( 2 )
+
+[node name="HpBar" type="Polygon2D" parent="."]
+position = Vector2( 0, -12 )
+scale = Vector2( 1, 0.300229 )
+color = Color( 0.101961, 1, 0, 1 )
+polygon = PoolVector2Array( -20.6964, -16, 19.3036, -16, 19.3036, -24, -20.6964, -24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -6 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 4 )
+animation = "Switch"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack = SubResource( 5 )
+anims/Walk = SubResource( 6 )

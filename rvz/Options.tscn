@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Options.cs" type="Script" id=1]
+
+[node name="Options" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SliderBox" type="VBoxContainer" parent="."]
+margin_left = 264.0
+margin_top = 136.0
+margin_right = 768.0
+margin_bottom = 456.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SliderBox"]
+margin_right = 504.0
+margin_bottom = 31.0
+text = "Music
+"
+align = 1
+
+[node name="MusicSlider" type="HSlider" parent="SliderBox"]
+margin_top = 47.0
+margin_right = 504.0
+margin_bottom = 63.0
+min_value = -60.0
+max_value = 0.0
+
+[node name="Label2" type="Label" parent="SliderBox"]
+margin_top = 79.0
+margin_right = 504.0
+margin_bottom = 93.0
+text = "SFX"
+align = 1
+
+[node name="SFXSlider" type="HSlider" parent="SliderBox"]
+margin_top = 109.0
+margin_right = 504.0
+margin_bottom = 125.0
+min_value = -60.0
+max_value = 0.0
+
+[node name="CloseButton" type="Button" parent="."]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "X"
+
+[connection signal="value_changed" from="SliderBox/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="SliderBox/SFXSlider" to="." method="_on_SFXSlider_value_changed"]

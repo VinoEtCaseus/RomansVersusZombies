@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Coin.cs" type="Script" id=1]
+
+[node name="Coin" type="Node2D"]
+scale = Vector2( 0.125, 0.125 )
+script = ExtResource( 1 )
+
+[node name="CoinBack" type="Polygon2D" parent="."]
+color = Color( 0.631373, 0.639216, 0.52549, 1 )
+polygon = PoolVector2Array( 0, 64, 64, 0, 0, -64, -64, 0 )
+
+[node name="CoinFace" type="Polygon2D" parent="."]
+scale = Vector2( 0.25, 0.25 )
+color = Color( 0.345098, 0.384314, 0.227451, 1 )
+polygon = PoolVector2Array( -128, -128, 128, -128, 128, 128, -128, 128 )

@@ -1,0 +1,163 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Art/classical_temple_tiles.png" type="Texture" id=1]
+[ext_resource path="res://Theme.tres" type="Theme" id=2]
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 272, 416, 16, 16 )
+
+[node name="Hud" type="Control"]
+anchor_right = 0.992
+anchor_bottom = 0.24
+margin_right = 8.19196
+margin_bottom = 8.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameInfo" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+margin_right = 1024.0
+margin_bottom = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UnitButton" type="Button" parent="GameInfo"]
+margin_right = 128.0
+margin_bottom = 128.0
+text = "Spawn"
+icon = SubResource( 3 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArrowButton" type="Button" parent="GameInfo"]
+margin_left = 256.0
+margin_right = 384.0
+margin_bottom = 128.0
+text = "Arrow"
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReserveLabel" type="RichTextLabel" parent="GameInfo"]
+margin_left = 128.0
+margin_top = 88.0
+margin_right = 272.0
+margin_bottom = 136.0
+text = "Reserve:-1
+
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WaveLabel" type="RichTextLabel" parent="GameInfo"]
+margin_left = 800.0
+margin_top = 24.0
+margin_right = 888.0
+margin_bottom = 72.0
+text = "Wave: -1
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverPanel" type="Panel" parent="."]
+margin_left = 408.0
+margin_top = 152.0
+margin_right = 568.0
+margin_bottom = 272.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GameOverPanel"]
+margin_right = 160.0
+margin_bottom = 120.0
+text = "Game Over..."
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RetryButton" type="Button" parent="GameOverPanel"]
+margin_left = 8.0
+margin_top = 144.0
+margin_right = 152.0
+margin_bottom = 188.0
+text = "Try Again?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="Button" parent="GameOverPanel"]
+margin_left = 8.0
+margin_top = 208.0
+margin_right = 152.0
+margin_bottom = 252.0
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndSessionButton" type="Button" parent="GameOverPanel"]
+margin_left = 8.0
+margin_top = 272.0
+margin_right = 152.0
+margin_bottom = 316.0
+text = "Give In."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartMenu" type="VBoxContainer" parent="."]
+margin_left = 408.0
+margin_top = 152.0
+margin_right = 560.0
+margin_bottom = 472.0
+custom_constants/separation = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartGame" type="Button" parent="StartMenu"]
+margin_right = 152.0
+margin_bottom = 44.0
+text = "Start"
+
+[node name="Tutorial" type="Button" parent="StartMenu"]
+margin_top = 60.0
+margin_right = 152.0
+margin_bottom = 104.0
+text = "Tutorial"
+
+[node name="Upgrades" type="Button" parent="StartMenu"]
+margin_top = 120.0
+margin_right = 152.0
+margin_bottom = 164.0
+text = "Upgrades"
+
+[node name="Options" type="Button" parent="StartMenu"]
+margin_top = 180.0
+margin_right = 152.0
+margin_bottom = 224.0
+text = "Options"
+
+[node name="QuitGame" type="Button" parent="StartMenu"]
+margin_top = 240.0
+margin_right = 152.0
+margin_bottom = 284.0
+text = "Quit Game"

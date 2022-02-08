@@ -1,0 +1,29 @@
+﻿<Project Sdk="Godot.NET.Sdk/3.3.0">
+  <PropertyGroup>
+    <ProjectGuid>{A161EFE0-D790-4C41-AB80-F329A5ABBE53}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>RomansVersusZombies</RootNamespace>
+    <AssemblyName>RomansVersusZombies</AssemblyName>
+    <GodotProjectGeneratorVersion>1.0.0.0</GodotProjectGeneratorVersion>
+    <TargetFrameworkProfile />
+    <TargetFramework>net472</TargetFramework>
+    <!--The following properties were overridden during migration to prevent errors.
+    Enabling them may require other manual changes to the project and its files.-->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Arrow.cs" />
+    <Compile Include="Coin.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="Progression.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Store.cs" />
+    <Compile Include="Unit.cs" />
+    <Compile Include="World.cs" />
+  </ItemGroup>
+</Project>

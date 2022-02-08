@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="Tutorial" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_right = 64.0
+margin_bottom = 64.0
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}

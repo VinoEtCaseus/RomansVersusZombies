@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/zombie-6.wav-bc48ca38dc9da5301d8a9c95242d633c.sample"
+
+[deps]
+
+source_file="res://Art/zombies/zombie-6.wav"
+dest_files=[ "res://.import/zombie-6.wav-bc48ca38dc9da5301d8a9c95242d633c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
